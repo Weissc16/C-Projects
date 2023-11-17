@@ -4,36 +4,46 @@
 #include <iostream>
 using namespace std;
 
-int main()
-{
-    myShape Rectangle;
-    Rectangle.Color = "Red";
-    Rectangle.Height = 10;
-    Rectangle.Width = 15;
-    Rectangle.getArea(10, 15);
-
-    myShape Triangle;
-    Triangle.Color = "Yellow";
-    Triangle.Height = 7;
-    Triangle.Width = 12;
-    Triangle.getArea(7, 12);
-
-    myShape Circle;
-    Circle.Color = "Blue";
-    int Radius = 15;
-    Circle.getArea(1, 15);
-}
-
 class myShape {
 public:
     string Color;
     int Height;
     int Width;
 
-    void getArea(int Height, int Width) {
+    void getAreaRec(int Height, int Width) {
         cout << Height * Width;
     }
+
+    void getAreaTri(int Height, int Width) {
+        cout << 0.5 * Width * Height;
+    }
+
+    void getAreaCir(int Height) {
+        cout << 3.14 * ((Height / 2) * (Height / 2));
+    }
 };
+
+
+int main()
+{
+    myShape Rectangle;
+    Rectangle.Color = "Red";
+    Rectangle.Height = 10;
+    Rectangle.Width = 15;
+    Rectangle.getAreaRec(10, 15);
+
+    myShape Triangle;
+    Triangle.Color = "Yellow";
+    Triangle.Height = 7;
+    Triangle.Width = 12;
+    Triangle.getAreaTri(7, 12);
+
+    myShape Circle;
+    Circle.Color = "Blue";
+    int Radius = 15;
+    Circle.getAreaCir(56);
+}
+
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
