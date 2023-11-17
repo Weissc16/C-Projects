@@ -4,6 +4,26 @@
 #include <iostream>
 using namespace std;
 
+
+class myDog {
+public:
+    string Breed;
+    string Color;
+    int Height;
+    int Weight;
+    void dogShake() {
+        cout << "Shake";
+    }
+    void dogSit() {
+        cout << "Sit";
+    }
+    void dogDown() {
+        cout << "Lay Down";
+    }
+};
+
+
+
 int main()
 {
     myDog Ghost; //create object of class
@@ -24,22 +44,6 @@ int main()
 
 }
 
-class myDog{
-public:
-    string Breed;
-    string Color;
-    int Height;
-    int Weight;
-    void dogShake() {
-        cout << "Shake";
-    }
-    void dogSit() {
-        cout << "Sit";
-    }
-    void dogDown() {
-        cout << "Lay Down";
-    }
-};
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
