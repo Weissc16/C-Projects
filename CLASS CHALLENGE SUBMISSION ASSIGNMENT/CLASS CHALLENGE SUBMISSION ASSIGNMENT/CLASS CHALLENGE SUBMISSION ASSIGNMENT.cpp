@@ -2,46 +2,49 @@
 //
 
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 class myShape {
 public:
     string Color;
-    int Height;
-    int Width;
 
-    void getAreaRec(int Height, int Width) {
-        cout << Height * Width;
-    }
-
-    void getAreaTri(int Height, int Width) {
-        cout << 0.5 * Width * Height;
-    }
-
-    void getAreaCir(int Height) {
-        cout << 3.14 * ((Height / 2) * (Height / 2));
-    }
+    void getArea();
 };
 
+    class Circle : public myShape {
+        string Color = "Blue";
+        int Radius;
+        void getArea(int Radius) {
+            cout << 0.5 * (Radius * Radius);
+        }
+    };
+
+    class Triangle : public myShape {
+        string Color = "Yellow";
+        int Base;
+        int Height;
+        void getArea(int Height, int Base) {
+            cout << 0.5 * (Base * Height);
+        }
+    };
+
+    class Rectangle : public myShape {
+        string Color = "Red";
+        int Height;
+        int Width;
+        void getArea(int Height, int Width) {
+            cout << Height * Width;
+        }
+    };
 
 int main()
 {
-    myShape Rectangle;
-    Rectangle.Color = "Red";
-    Rectangle.Height = 10;
-    Rectangle.Width = 15;
-    Rectangle.getAreaRec(10, 15);
+    Rectangle.getArea(int 10, int 20);
 
-    myShape Triangle;
-    Triangle.Color = "Yellow";
-    Triangle.Height = 7;
-    Triangle.Width = 12;
-    Triangle.getAreaTri(7, 12);
+    Circle.getArea(int 50);
 
-    myShape Circle;
-    Circle.Color = "Blue";
-    int Radius = 15;
-    Circle.getAreaCir(56);
+    Triangle.getArea(int 17, int 12);
 }
 
 
