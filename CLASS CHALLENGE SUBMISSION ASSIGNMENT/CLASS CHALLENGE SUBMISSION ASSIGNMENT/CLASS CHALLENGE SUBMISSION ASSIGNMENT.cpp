@@ -13,6 +13,7 @@ public:
 };
 
     class Circle : public myShape {
+    public:
         string Color = "Blue";
         int Radius;
         void getArea(int Radius) {
@@ -21,6 +22,7 @@ public:
     };
 
     class Triangle : public myShape {
+    public:
         string Color = "Yellow";
         int Base;
         int Height;
@@ -30,6 +32,7 @@ public:
     };
 
     class Rectangle : public myShape {
+    public:
         string Color = "Red";
         int Height;
         int Width;
@@ -40,11 +43,14 @@ public:
 
 int main()
 {
-    Rectangle.getArea(int 10, int 20);
+    Rectangle rectangle;
+    rectangle.getArea(24, 48);
 
-    Circle.getArea(int 50);
+    Circle circle;
+    circle.getArea(24);
 
-    Triangle.getArea(int 17, int 12);
+    Triangle triangle;
+    triangle.getArea(24, 36);
 }
 
 
